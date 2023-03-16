@@ -7,7 +7,7 @@ import { MessageService } from '../message.service';
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
 })
-export class HeroesComponent {
+export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   selectedHero?: Hero;
 
@@ -29,6 +29,6 @@ export class HeroesComponent {
   getHeroes(): void {
     this.heroService
       .getHeroes()
-      .subscribe((heroes2) => (this.heroes = heroes2));
+      .subscribe((heroes) => (this.heroes = heroes));
   }
 }
